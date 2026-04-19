@@ -1,6 +1,8 @@
 import numpy as np
 from numba import njit
 
+# This function simulates the SIR model with rewiring on a random graph,
+# and computes summary statistics.
 @njit
 def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
     adj = np.zeros((N, N), dtype=np.bool_)
@@ -10,6 +12,7 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
                 adj[i, j] = True
                 adj[j, i] = True
 
+# 0 = susceptible, 1 = infected, 2 = recovered
     state = np.zeros(N, dtype=np.int8)
     infected_chosen = 0
     while infected_chosen < n_infected0:
@@ -18,15 +21,18 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
             state[idx] = 1
             infected_chosen += 1
 
+# Arrays to store summary statistics
     infected_fraction = np.zeros(T + 1, dtype=np.float64)
     rewire_counts = np.zeros(T + 1, dtype=np.int64)
-    
+
+# Initial summary statistic at time 0    
     inf_count_initial = 0
     for i in range(N):
         if state[i] == 1:
             inf_count_initial += 1
     infected_fraction[0] = inf_count_initial / N
 
+# Main simulation loop
     for t in range(1, T + 1):
         
         new_infections = np.zeros(N, dtype=np.bool_)
@@ -37,6 +43,7 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
                         if np.random.random() < beta:
                             new_infections[j] = True
 
+# Update states for new infections
         for j in range(N):
             if new_infections[j]:
                 state[j] = 1
@@ -46,10 +53,12 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
                 if np.random.random() < gamma:
                     state[i] = 2
 
+# Identify SI edges for potential rewiring
         si_s = np.zeros(N * N, dtype=np.int32)
         si_i = np.zeros(N * N, dtype=np.int32)
         si_count = 0
 
+# Collect all SI edges
         for i in range(N):
             if state[i] == 0:
                 for j in range(N):
@@ -58,6 +67,7 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
                         si_i[si_count] = j
                         si_count += 1
 
+# Rewire SI edges with probability rho
         rewire_count = 0
         for idx in range(si_count):
             if np.random.random() < rho:
@@ -83,6 +93,7 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
                     adj[new_partner, s_node] = True
                     rewire_count += 1
 
+# Compute summary statistics at time t
         inf_count = 0
         for i in range(N):
             if state[i] == 1:
@@ -90,6 +101,7 @@ def simulate_fast(beta, gamma, rho, N=200, p_edge=0.05, n_infected0=5, T=200):
         infected_fraction[t] = inf_count / N
         rewire_counts[t] = rewire_count
 
+# Compute degree histogram (capped at 30)
     degree_histogram = np.zeros(31, dtype=np.int64)
     for i in range(N):
         deg = 0
