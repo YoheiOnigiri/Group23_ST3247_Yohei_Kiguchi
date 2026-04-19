@@ -10,7 +10,7 @@ In adaptive epidemic models, individuals modify their social contacts in respons
 
 ## Key Features
 - **High-Performance Simulation**: The core epidemic engine is optimized using **Numba** to achieve the computational speed required for the thousands of forward simulations necessary for SBI.
-- **Mahalanobis Distance Metric**: To resolve the parameter non-identifiability (specifically the $\beta$-$\rho$ trade-off), we implemented the Mahalanobis distance to decorrelate the summary statistics space.
+- **Mahalanobis Distance Metric**: To resolve the parameter non-identifiability (specifically the $\beta$ - $\rho$ trade-off), we implemented the Mahalanobis distance to decorrelate the summary statistics space.
 - **Local Linear Regression Adjustment**: A post-processing step based on Beaumont et al. (2002) was applied to correct for the bias introduced by non-zero tolerance levels, significantly sharpening the posterior distribution.
 - **Validation**: The model's predictive performance was validated using **Posterior Predictive Checks (PPC)**, demonstrating 100% coverage of observed temporal and structural data.
 
