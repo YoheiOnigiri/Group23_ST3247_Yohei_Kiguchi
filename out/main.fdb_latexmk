@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber out/main"] 1776604725.0454 "out/main.bcf" "out/main.bbl" "out/main" 1776605346.47199 0
-  "out/main.bcf" 1776605346.41993 135157 4895ccbed20ea6703f041f7d1fb3d3a2 "pdflatex"
+["biber out/main"] 1776604725.0454 "out/main.bcf" "out/main.bbl" "out/main" 1776606357.81545 0
+  "out/main.bcf" 1776606357.75869 135157 4895ccbed20ea6703f041f7d1fb3d3a2 "pdflatex"
   "references.bib" 1776603533.22396 9351 c28aeeae560b58e832107167ad1ce167 ""
   (generated)
   "out/main.bbl"
   "out/main.blg"
   (rewritten before read)
-["pdflatex"] 1776605345.54926 "/Users/yohei/Documents/NUS/Y2S2/ST3247_Project/main.tex" "out/main.pdf" "main" 1776605346.47224 0
-  "/Users/yohei/Documents/NUS/Y2S2/ST3247_Project/main.tex" 1776603994.2054 1625 f4276bcbf30f1252eb929f8494c97bd1 ""
+["pdflatex"] 1776606356.81889 "/Users/yohei/Documents/NUS/Y2S2/ST3247_Project/main.tex" "out/main.pdf" "main" 1776606357.81576 0
+  "/Users/yohei/Documents/NUS/Y2S2/ST3247_Project/main.tex" 1776606356.73223 1748 fc96a5027247fdc6110ff7d26bad8826 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_dhi6qf.enc" 1558472472 2914 3d1e3c4123f03ab27df5767d5039d109 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -161,11 +161,11 @@
   "/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1772889496 5541377 04880c840ca220163a28f1a3af0ee662 ""
   "/usr/local/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1772889465 3636760 2af976ecdd3b540694516e32c3ea0a72 ""
   "/usr/local/texlive/2026/texmf.cnf" 1772409725 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
-  "main.tex" 1776603994.2054 1625 f4276bcbf30f1252eb929f8494c97bd1 ""
-  "out/main.aux" 1776605346.41689 9331 9ee37767a8a1834801bbf6f943cad3d0 "pdflatex"
+  "main.tex" 1776606356.73223 1748 fc96a5027247fdc6110ff7d26bad8826 ""
+  "out/main.aux" 1776606357.75581 9331 9ee37767a8a1834801bbf6f943cad3d0 "pdflatex"
   "out/main.bbl" 1776604726.2511 43406 7b8d33f28bdeb131c975b1bfacb2f878 "biber out/main"
-  "out/main.out" 1776605346.41782 3174 3e1508d72055a44a9c19384ffdcfcddf "pdflatex"
-  "out/main.run.xml" 1776605346.42136 2427 d1bfcd6d722f5bf4e724fdcb22d9bbf2 "pdflatex"
+  "out/main.out" 1776606357.75662 3174 3e1508d72055a44a9c19384ffdcfcddf "pdflatex"
+  "out/main.run.xml" 1776606357.75929 2427 d1bfcd6d722f5bf4e724fdcb22d9bbf2 "pdflatex"
   "plots/posterior_pairplot_s4_time.pdf" 1776522876.36682 121810 86cf92726bf1bde44d4dfce46e4cc0fc ""
   "plots/smc_abc_SIR_plot_1.pdf" 1776566712.19226 28628 8916f998568b67c70ef05766d1b360a2 ""
   "plots/smc_abc_pairplot_s4_weighted_time.pdf" 1776566687.13635 92492 a5ca04155a7e3871709938fbaf999388 ""

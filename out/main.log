@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.7)  19 APR 2026 21:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.7)  19 APR 2026 21:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -708,20 +708,19 @@ File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 
 LaTeX Warning: No \author given.
 
-(./sections/01_introduction.tex
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 8.
+(Font)              scaled to size 12.50409pt on input line 52.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 8.
+(Font)              scaled to size 9.37807pt on input line 52.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 8.
+(Font)              scaled to size 7.29405pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 12.50409pt on input line 8.
+(Font)              scaled to size 12.50409pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 8.
+(Font)              scaled to size 9.37807pt on input line 52.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 8.
-) (./sections/02_abc_rejection.tex
+(Font)              scaled to size 7.29405pt on input line 52.
+(./sections/01_introduction.tex) (./sections/02_abc_rejection.tex
 Overfull \hbox (6.16774pt too wide) in paragraph at lines 3--3
 []\T1/ppl/b/n/17.28 Approximate Bayesian Com-pu-ta-tion: Re-jec-tion Sam-pling 
  []
@@ -729,7 +728,7 @@ Overfull \hbox (6.16774pt too wide) in paragraph at lines 3--3
 [1
 
 {/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-<plots/posterior_pairplot_s4_time.pdf, id=69, 534.72858pt x 534.7817pt>
+<plots/posterior_pairplot_s4_time.pdf, id=70, 534.72858pt x 534.7817pt>
 File: plots/posterior_pairplot_s4_time.pdf Graphic file (type pdf)
 <use plots/posterior_pairplot_s4_time.pdf>
 Package pdftex.def Info: plots/posterior_pairplot_s4_time.pdf  used on input line 20.
@@ -759,7 +758,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 6.
 
-<plots/smc_abc_SIR_plot_1.pdf, id=103, 1004.25407pt x 352.34511pt>
+<plots/smc_abc_SIR_plot_1.pdf, id=104, 1004.25407pt x 352.34511pt>
 File: plots/smc_abc_SIR_plot_1.pdf Graphic file (type pdf)
 <use plots/smc_abc_SIR_plot_1.pdf>
 Package pdftex.def Info: plots/smc_abc_SIR_plot_1.pdf  used on input line 16.
@@ -771,12 +770,12 @@ File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )) (./sections/04_advanced_methods.tex
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 15.
  [4]
-<plots/smc_abc_pairplot_s4_weighted_time.pdf, id=176, 535.22708pt x 534.7817pt>
+<plots/smc_abc_pairplot_s4_weighted_time.pdf, id=177, 535.22708pt x 534.7817pt>
 File: plots/smc_abc_pairplot_s4_weighted_time.pdf Graphic file (type pdf)
 <use plots/smc_abc_pairplot_s4_weighted_time.pdf>
 Package pdftex.def Info: plots/smc_abc_pairplot_s4_weighted_time.pdf  used on input line 51.
 (pdftex.def)             Requested size: 225.4804pt x 225.29222pt.
-<plots/smc_abc_pairplot_s5_mahalanobis.pdf, id=177, 535.22708pt x 534.7817pt>
+<plots/smc_abc_pairplot_s5_mahalanobis.pdf, id=178, 535.22708pt x 534.7817pt>
 File: plots/smc_abc_pairplot_s5_mahalanobis.pdf Graphic file (type pdf)
 <use plots/smc_abc_pairplot_s5_mahalanobis.pdf>
 Package pdftex.def Info: plots/smc_abc_pairplot_s5_mahalanobis.pdf  used on input line 58.
@@ -786,26 +785,26 @@ File: plots/smc_abc_pairplot_s5_mahalanobis.pdf Graphic file (type pdf)
 <use plots/smc_abc_pairplot_s5_mahalanobis.pdf>
 Package pdftex.def Info: plots/smc_abc_pairplot_s5_mahalanobis.pdf  used on input line 77.
 (pdftex.def)             Requested size: 225.4804pt x 225.29222pt.
-<plots/smc_abc_pairplot_s5_regression_adjusted.pdf, id=191, 535.31744pt x 534.7817pt>
+<plots/smc_abc_pairplot_s5_regression_adjusted.pdf, id=192, 535.31744pt x 534.7817pt>
 File: plots/smc_abc_pairplot_s5_regression_adjusted.pdf Graphic file (type pdf)
 <use plots/smc_abc_pairplot_s5_regression_adjusted.pdf>
 Package pdftex.def Info: plots/smc_abc_pairplot_s5_regression_adjusted.pdf  used on input line 84.
 (pdftex.def)             Requested size: 225.4804pt x 225.25142pt.
  [6 <./plots/smc_abc_pairplot_s4_weighted_time.pdf> <./plots/smc_abc_pairplot_s5_mahalanobis.pdf>]) (./sections/05_model_validation.tex [7 <./plots/smc_abc_pairplot_s5_regression_adjusted.pdf>]
-<plots/smc_abc_ppc_plot.pdf, id=283, 1004.26945pt x 352.34511pt>
+<plots/smc_abc_ppc_plot.pdf, id=284, 1004.26945pt x 352.34511pt>
 File: plots/smc_abc_ppc_plot.pdf Graphic file (type pdf)
 <use plots/smc_abc_ppc_plot.pdf>
 Package pdftex.def Info: plots/smc_abc_ppc_plot.pdf  used on input line 14.
 (pdftex.def)             Requested size: 446.26582pt x 156.56995pt.
 ) (./sections/06_conclusion.tex [8 <./plots/smc_abc_ppc_plot.pdf>]) [9]
-LaTeX Font Info:    Trying to load font information for T1+LinuxLibertineMonoT-TLF on input line 65.
+LaTeX Font Info:    Trying to load font information for T1+LinuxLibertineMonoT-TLF on input line 67.
  (/usr/local/texlive/2026/texmf-dist/tex/latex/libertine/T1LinuxLibertineMonoT-TLF.fd
 File: T1LinuxLibertineMonoT-TLF.fd 2019/05/20 (autoinst) Font definitions for T1/LinuxLibertineMonoT-TLF.
 )
 LaTeX Font Info:    Font shape `T1/LinuxLibertineMonoT-TLF/m/n' in size <12> not available
-(Font)              Font shape `T1/LinuxLibertineMonoT-TLF/regular/n' tried instead on input line 65.
+(Font)              Font shape `T1/LinuxLibertineMonoT-TLF/regular/n' tried instead on input line 67.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineMonoT-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 65.
+(Font)              scaled to size 12.0pt on input line 67.
  [10
 
 {/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/libertine/lbtn_dhi6qf.enc}] (out/main.aux)
@@ -822,16 +821,16 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  21809 strings out of 467525
  389670 string characters out of 5418983
- 1303541 words of memory out of 5000000
+ 1302541 words of memory out of 5000000
  50361 multiletter control sequences out of 15000+600000
  666438 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  83i,9n,131p,1491b,5177s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2026/texmf-dist/fonts/type1/public/libertine/LinLibertineMT.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathpazo/fplmb.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on out/main.pdf (10 pages, 594233 bytes).
+Output written on out/main.pdf (10 pages, 594503 bytes).
 PDF statistics:
- 427 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
+ 428 PDF objects out of 1000 (max. 8388607)
+ 219 compressed objects within 3 object streams
  40 named destinations out of 1000 (max. 500000)
  135 words of extra memory for PDF output out of 10000 (max. 10000000)
 
