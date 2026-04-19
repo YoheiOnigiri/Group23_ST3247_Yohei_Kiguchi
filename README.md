@@ -1,64 +1,62 @@
-# SBI for Epidemic Parameter Inference on Adaptive Networks
+# Simulation-Based Inference for an Adaptive-Network Epidemic Model
 
-Companion code and data for the simulation-based inference (SBI) class assignment.
-Given a stochastic SIR epidemic model on an adaptive network, infer the unknown parameters $(\beta, \gamma, \rho)$ from observed data using SBI methods.
+This repository contains the complete implementation and the final technical report for the ST3247 Computational Statistics project. The study focuses on inferring unknown parameters of a stochastic SIR (Susceptible-Infected-Recovered) model on an adaptive network using advanced Simulation-Based Inference (SBI) techniques.
 
-## The model
+## Project Overview
+In adaptive epidemic models, individuals modify their social contacts in response to the spread of disease (e.g., breaking links with infected neighbors). This behavioral feedback creates a complex loop that makes the likelihood function analytically intractable. We utilize **Sequential Monte Carlo ABC (SMC-ABC)** combined with advanced distance metrics and post-processing adjustments to estimate:
+- **$\beta$**: Infection probability per S-I edge per step
+- **$\gamma$**: Recovery probability per infected agent per step
+- **$\rho$**: Rewiring probability per S-I edge per step
 
-A population of 200 agents interact on an undirected contact network.
-Each agent is **Susceptible (S)**, **Infected (I)**, or **Recovered (R)**.
-The initial network is an Erdos-Renyi graph $G(N, p)$ with $p = 0.05$, giving an expected degree of about 10.
-At time 0, five agents chosen uniformly at random are infected.
+## Key Features
+- **High-Performance Simulation**: The core epidemic engine is optimized using **Numba** to achieve the computational speed required for the thousands of forward simulations necessary for SBI.
+- **Mahalanobis Distance Metric**: To resolve the parameter non-identifiability (specifically the $\beta$-$\rho$ trade-off), we implemented the Mahalanobis distance to decorrelate the summary statistics space.
+- **Local Linear Regression Adjustment**: A post-processing step based on Beaumont et al. (2002) was applied to correct for the bias introduced by non-zero tolerance levels, significantly sharpening the posterior distribution.
+- **Validation**: The model's predictive performance was validated using **Posterior Predictive Checks (PPC)**, demonstrating 100% coverage of observed temporal and structural data.
 
-Three parameters govern the dynamics:
-
-| Parameter | Meaning | Prior |
-|-----------|---------|-------|
-| $\beta$ | Infection probability per S--I edge per step | Uniform(0.05, 0.50) |
-| $\gamma$ | Recovery probability per infected agent per step | Uniform(0.02, 0.20) |
-| $\rho$ | Rewiring probability per S--I edge per step | Uniform(0.0, 0.8) |
-
-At each of the 200 time steps, three phases are applied synchronously:
-
-1. **Infection.** Each susceptible neighbor of an infected agent becomes infected with probability $\beta$.
-2. **Recovery.** Each infected agent recovers with probability $\gamma$.
-3. **Rewiring.** For each S-I edge, with probability $\rho$ the susceptible agent breaks the link and connects to a random non-neighbor. This models behavioral avoidance of infected contacts.
-
-## Repository contents
-
-```
-simulator.py                      # Python implementation of the model
-data/
-  infected_timeseries.csv         # Fraction infected over time (40 replicates)
-  rewiring_timeseries.csv         # Rewiring counts over time (40 replicates)
-  final_degree_histograms.csv     # Degree distribution at t=200 (40 replicates)
+## Repository Structure
+```text
+.
+├── main.pdf                   # Final Technical Report
+├── main.tex                   # LaTeX source code
+├── references.bib             # Bibliography file (APA style)
+├── requirements.txt           # Python dependency list
+├── simulator_fast.py          # Numba-accelerated SIR simulator engine
+├── 01_baseline_abc.ipynb      # Step 1: Baseline Rejection Sampling
+├── 02_smc_abc.ipynb           # Step 2: Initial SMC-ABC implementation
+├── 03_smc_abc.ipynb           # Step 3: Feature exploration and sensitivity
+├── 04_smc_abc_final.ipynb     # Step 4: Final Pipeline (Mahalanobis + Regression + PPC)
+├── data/                      # Directory containing provided observed datasets
+├── plots/                     # Output figures and visualizations
+└── sections/                  # LaTeX sub-files for the report
 ```
 
-## Simulator usage
+## Getting Started
+### Prerequisites
 
-```python
-import numpy as np
-from simulator import simulate
+This project requires Python 3.9+. You can install all necessary dependencies using the provided `requirements.txt`:
 
-# Run one replicate with specific parameters
-rng = np.random.default_rng(42)
-infected, rewires, degrees = simulate(beta=0.3, gamma=0.15, rho=0.7, rng=rng)
+```bash
+pip install -r requirements.txt
 ```
 
-See `simulator.py` for full parameter documentation.
+### Reproducing Results
 
-## Observed data
+To reproduce the findings and figures presented in the report, please execute the notebooks in the following order:
 
-The data files contain 40 independent realizations, all generated with the **same** unknown $(\beta, \gamma, \rho)$.
-The contact network is never observed.
+1. `01_baseline_abc.ipynb`: Run this to understand the baseline performance and the motivation for sequential methods.
 
-| File | Columns |
-|------|---------|
-| `infected_timeseries.csv` | `replicate_id`, `time`, `infected_fraction` |
-| `rewiring_timeseries.csv` | `replicate_id`, `time`, `rewire_count` |
-| `final_degree_histograms.csv` | `replicate_id`, `degree` (0-30, clipped), `count` |
+2. `04_smc_abc_final.ipynb`: Run this for the primary results, including the Mahalanobis-based SMC-ABC, the local linear regression adjustment, and the final Posterior Predictive Checks.
 
-## Requirements
+## Methodology Summary
+1. **Summary Statistic Design**: We utilize 5 informative features, including peak infection fraction, rewiring ratios, and final degree variance.
 
-- Python 3.8+
-- NumPy
+2. **Sequential Refinement**: The SMC-ABC algorithm uses an adaptive tolerance schedule across 4 generations to efficiently narrow down the parameter space.
+
+3. **Accuracy Enhancement**: The use of inverse-covariance weighting (Mahalanobis) and regression-based "shrinkage" allows for high precision despite the stochastic nature of the model.
+
+## Author
+Yohei Kiguchi (A0308628X, e1399068@u.nus.edu)
+
+## Acknowledgments
+This project was developed for the ST3247 Computational Statistics module. Generative AI tools (Gemini/Notebook LM) were utilized for LaTeX document structuring and refactoring Python code for performance optimization.
