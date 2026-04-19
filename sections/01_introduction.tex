@@ -1,0 +1,12 @@
+\section{Introduction}
+Infectious disease dynamics are heavily influenced by the underlying contact network of individuals.
+In standard epidemic models, the network structure is often assumed to be static.
+However, real-world populations exhibit adaptive behavior where individuals modify their contacts in response to the epidemic.
+This project investigates a Susceptible-Infected-Recovered (SIR) model on an adaptive network, where susceptible individuals break links with infected neighbors and form new connections to non-infected agents.
+The feedback loop between the disease spread and the evolving network topology makes the likelihood function for this model intractable \parencite{demirel2017dynamics}.
+Standard statistical methods, such as Maximum Likelihood Estimation, are therefore difficult to apply directly to such complex stochastic systems.
+To address this challenge, we employ Simulation-Based Inference (SBI) to estimate the core parameters: the infection probability $\beta$, the recovery probability $\gamma$, and the rewiring probability $\rho$.
+Since SBI requires a significant number of forward simulations, we implemented a high-performance simulator using Python and Numba to ensure computational efficiency during the inference process.
+We are provided with observed data from $R=40$ independent realizations of the stochastic process.
+The available measurements include time-series data for the infected fraction and rewiring counts, as well as final degree histograms at the conclusion of the simulation.
+The goal of this report is to describe the implementation of Approximate Bayesian Computation (ABC) and explore advanced sequential methods to obtain robust posterior distributions for the unknown parameters.

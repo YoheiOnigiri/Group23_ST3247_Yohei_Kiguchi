@@ -1,0 +1,67 @@
+\documentclass[12pt]{article}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%% PREAMBLE (Optimized Version) %%%%%%%%%%%%%%%%%%%
+% --- Language and Encoding ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% --- Math Packages ---
+\usepackage{amsfonts, amsmath, amssymb} 
+
+% --- Fonts ---
+\usepackage{libertine} 
+\usepackage{mathpazo} 
+
+% --- Layout and Graphics ---
+\usepackage{fullpage}
+\usepackage{graphicx} 
+\usepackage{booktabs} 
+\usepackage{float}
+\usepackage{subcaption}
+
+% --- Algorithms ---
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% --- Bibliography (Updated for APA via BibLaTeX) ---
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% --- Hyperlinks (Should be loaded last in most cases) ---
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = true,
+    linkcolor = blue,
+    urlcolor  = blue,
+    citecolor = blue,
+    anchorcolor = blue
+}
+\urlstyle{same}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Simulation-Based Inference for an Adaptive-Network Epidemic Model}
+\date{\today}
+\maketitle
+\thispagestyle{empty}
+
+\centerline{\textbf{Group Composition:} Yohei Kiguchi (A0308628X, e1399068@u.nus.edu)}
+\vspace{1em}
+\hrule
+\vspace{1.5em}
+
+% === MAIN CONTENT ===
+\input{sections/01_introduction}
+\input{sections/02_abc_rejection}
+\input{sections/03_summary_stats}
+\input{sections/04_advanced_methods}
+\input{sections/05_model_validation}
+\input{sections/06_conclusion}
+
+% === BIBLIOGRAPHY ===
+\clearpage
+\printbibliography
+
+\end{document}

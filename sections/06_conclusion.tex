@@ -1,0 +1,16 @@
+% Section 06: Conclusion
+\section{Conclusion}
+
+This project successfully developed and implemented a robust Simulation-Based Inference (SBI) framework to estimate the parameters of an SIR epidemic model on an adaptive network.
+The inherent complexity of the model, characterized by a feedback loop between disease spread and topological changes, rendered traditional likelihood-based methods intractable \parencite{demirel2017dynamics}.
+Through a systematic progression from naive rejection sampling to advanced Sequential Monte Carlo (SMC) methods \parencite{beaumont2009adaptive}, we demonstrated the power of modern computational statistics in resolving parameter non-identifiability.
+
+A key contribution of this work was the identification and resolution of the equifinality between the infection rate $\beta$ and the rewiring rate $\rho$.
+By conducting comparative simulations, we identified that temporal and structural dynamics—specifically peak timing and degree variance—provided the necessary information to decouple these parameters.
+The implementation of the Mahalanobis distance was instrumental in this regard \parencite{nott2014approximate}, as it allowed the algorithm to account for the inherent correlations within our 5-dimensional summary statistics vector.
+
+Furthermore, the application of local linear regression adjustment \parencite{beaumont2002approximate} provided a significant leap in precision, yielding an average reduction of 30\% in posterior uncertainty \parencite{blum2017regression}.
+The final validation via Posterior Predictive Checks (PPC) confirmed the excellence of our inference pipeline, achieving 100\% coverage of the observed data within the 95\% prediction intervals and maintaining extremely low RMSE values.
+
+In conclusion, our results show that even in stochastic systems with complex, unobserved latent structures like adaptive networks, accurate parameter inference is achievable through the strategic design of summary statistics and the application of adaptive, correlation-aware sampling algorithms.
+This framework provides a solid foundation for future research into real-world epidemic control where behavioral adaptation plays a central role.
